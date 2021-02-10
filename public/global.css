@@ -65,3 +65,23 @@ button:focus {
 	border-color: #666;
 }
 */
+
+.title.is-1, .title.is-2, .title ~ .subtitle {
+	margin-bottom: 2.5rem !important;
+}
+
+.is-after-hero {
+	padding-top: 17rem !important;
+}
+
+@media(max-width: 992px) {
+	.is-hidden-mobile {
+		display:none;
+	}
+}
+
+@media(min-width: 992px) {
+	.is-hidden-desktop {
+		display:none;
+	}
+}
