@@ -5,19 +5,83 @@
     <div class="content card">
         <p>
             <b>
-                <span id="desktop-prompt">Built using</span>
-                <span id="mobile-prompt">Built using</span>
+                <span id="desktop-prompt">This page is powered by</span>
+                <span id="mobile-prompt">This page is powered by</span>
             </b> 
             <br>
-            Svelte | Node.js
-            <br>
-            Ruby | Perl
+            <img class="logo-img"
+            src="/images/logos/svelte.svg" 
+            alt="Svelte Logo">
+            <img class="logo-img is-node-logo"
+            src="/images/logos/node.png" 
+            alt="Node.js Logo">
+            <img class="logo-img"
+            src="/images/logos/rails.svg" 
+            alt="Rails Logo">
+            <img class="logo-img"
+            src="/images/logos/perl.svg" 
+            alt="Perl Logo">
         </p>
     </div>
-    <div class="padding card"></div>
-    <div class="border card"></div>
-    <div class="background card"></div>
-    <!--div class="box-shadow card"></div-->
+
+    <div class="box-shadow card">
+        <h3 class="stack-title title is-6">This website is powered by...</h3>
+        <img class="logo-img"
+        src="/images/logos/svelte.svg" 
+        alt="Svelte Logo">
+        <a>view on github</a>
+
+        <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <!-- Any other Bulma elements you want -->
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+          </div>
+    </div>
+    <div class="padding card">
+
+        <img class="logo-img is-node-logo"
+        src="/images/logos/node.png" 
+        alt="Node.js Logo">
+        <a>view on github</a>
+
+        <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <!-- Any other Bulma elements you want -->
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+          </div>
+    </div>
+    <div class="border card">
+        <img class="logo-img"
+        src="/images/logos/rails.svg" 
+        alt="Rails Logo">
+        <a>view on github</a>
+        <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <!-- Any other Bulma elements you want -->
+              <a href="#experience"></a>
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+        </div>
+    </div>
+    <div class="background card">
+        <img class="logo-img"
+        src="/images/logos/perl.svg" 
+        alt="Perl Logo">
+        <a>view on github</a>
+        <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <!-- Any other Bulma elements you want -->
+              <a href="#contact"></a>
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+        </div>
+    </div>
 </div>
 
 <style lang="postcss">
@@ -46,85 +110,9 @@
             }
         }
 
-        &:matches(:hover, :active) .card {
-            --bg-opacity: 5%;
-            transition-duration: 2s;
-            transition-timing-function: var(--easeInOutCirc);
-            transform: rotateX(45deg) rotate(45deg) translateZ(var(--z-offset))
-                translateY(20vh) translateX(20vh);
 
-            &:nth-child(1) {
-                --z-offset: 50vh;
-            }
-            &:nth-child(2) {
-                --z-offset: 35vh;
-            }
-            &:nth-child(3) {
-                --z-offset: 20vh;
-            }
-            &:nth-child(4) {
-                --z-offset: 5vh;
-            }
-            &:nth-child(5) {
-                --z-offset: -10vh;
-            }
-
-            &:nth-child(1)::after {
-                transition-delay: 1.5s;
-            }
-            &:nth-child(2)::after {
-                transition-delay: 1.7s;
-            }
-            &:nth-child(3)::after {
-                transition-delay: 1.9s;
-            }
-            &:nth-child(4)::after {
-                transition-delay: 2.1s;
-            }
-            &:nth-child(5)::after {
-                transition-delay: 2.3s;
-            }
-
-            &::after {
-                opacity: 1;
-                transform: rotate(-45deg) rotateY(45deg) translateX(0px);
-            }
-
-            &.content {
-                background: white;
-                color: white;
-                border-color: transparent;
-                transition: border-color 1s var(--easeInOutCirc) 0s,
-                    background-color 1s var(--easeInOutCirc) 0s,
-                    color 1s var(--easeInOutCirc) 0s,
-                    transform 2s var(--easeInOutCirc) 0s;
-            }
-
-            &.padding {
-                transition-delay: 0.1s;
-            }
-
-            &.border {
-                transition-delay: 0.2s;
-            }
-
-            &.background {
-                background: white;
-                transition: background-color 2s var(--easeInOutCirc) 0.3s,
-                    transform 2s var(--easeInOutCirc) 0.2s;
-            }
-
-            /*&.box-shadow {
-                transition-delay: 0.4s;
-                box-shadow: 0 -1px 25px rgba(0, 0, 0, 0.4),
-                    0 7.6px 6.1px rgba(0, 0, 0, 0.051),
-                    0 14.3px 11.5px rgba(0, 0, 0, 0.059),
-                    0 25.5px 20.5px rgba(0, 0, 0, 0.07),
-                    0 47.6px 38.4px rgba(0, 0, 0, 0.094),
-                    0 114px 92px rgba(0, 0, 0, 0.19);
-            }*/
-        }
     }
+
 
     .card {
         grid-area: stack;
@@ -140,9 +128,16 @@
         box-sizing: border-box;
         color: rgb(0, 0, 0);
         box-siing: border-box;
-        background: lch(100 0 0 / 5%);
+        background: white !important;
         position: relative;
         overflow: visible;
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: column;
+        padding: 5vmin;
+        cursor: pointer;
 
         @media (orientation: landscape) {
             inline-size: 40vh;
@@ -177,6 +172,7 @@
             transform: rotate(-45deg) rotateY(45deg) translateX(20px);
             background: lch(0 0 0 / 70%);
             color:white;
+            display: none !important;
 
             @media (max-width: 540px) {
                 left: -20%;
@@ -185,10 +181,9 @@
         }
 
         &.content {
-            z-index: 5;
+            z-index: 6;
             transition: border-color 4s ease, background-color 5s ease 2s,
                 color 4s ease 0s, transform 4s ease 0s;
-            padding: 5vmin;
             font-size: max(2.5vmin, 0.9rem);
             line-height: 1.5;
             background: lch(100 0 0);
@@ -217,7 +212,7 @@
                 content: "";
                 position: absolute;
                 inset: 0;
-                clip-path: polygon(
+                /*clip-path: polygon(
                     0% 0%,
                     0% 100%,
                     5vmin 100%,
@@ -235,7 +230,7 @@
                     cyan 1px,
                     lch(100 0 0 / 5%) 1px,
                     lch(100 0 0 / 5%) 10px
-                );
+                );*/
             }
         }
 
@@ -264,7 +259,7 @@
                     100% 0%
                 );
                 border-radius: 5px;
-                background: linear-gradient(#05d1b2, #05d1b2);
+                //background: linear-gradient(#05d1b2, #05d1b2);
             }
         }
 
@@ -283,15 +278,89 @@
             }
         }
 
-        /*&.box-shadow {
-            z-index: 1;
+        &.box-shadow {
+            z-index:5;
             background: transparent;
             transition: box-shadow 4s ease 0.4s, transform 4s ease 0.4s;
 
             &::after {
-                content: "Perl";
+                content: "";
             }
-        }*/
+        }
+
+
+        --bg-opacity: 5%;
+        transition-duration: 2s;
+        transition-timing-function: var(--easeInOutCirc);
+
+        &:nth-child(1) {
+            --z-offset: 50vh;
+            transform: rotateX(45deg) rotate(45deg) translateZ(var(--z-offset))
+                translateY(15vh) translateX(15vh);
+        }
+        &:nth-child(2) {
+            --z-offset: 50vh;
+            transform: rotateX(45deg) rotate(45deg) translateZ(var(--z-offset))
+                translateY(20vh) translateX(15vh);
+        }
+        &:nth-child(3) {
+            --z-offset: 35vh;
+            transform: rotateX(45deg) rotate(45deg) translateZ(var(--z-offset))
+                translateY(25vh) translateX(15vh);
+        }
+        &:nth-child(4) {
+            --z-offset: 20vh;
+            transform: rotateX(45deg) rotate(45deg) translateZ(var(--z-offset))
+                translateY(30vh) translateX(15vh);
+        }
+        &:nth-child(5) {
+            --z-offset: 5vh;
+            transform: rotateX(45deg) rotate(45deg) translateZ(var(--z-offset))
+                translateY(35vh) translateX(15vh);
+        }
+
+        &:nth-child(1)::after {
+            transition-delay: 1.5s;
+        }
+        &:nth-child(2)::after {
+            transition-delay: 1.7s;
+        }
+        &:nth-child(3)::after {
+            transition-delay: 1.9s;
+        }
+        &:nth-child(4)::after {
+            transition-delay: 2.1s;
+        }
+        &:nth-child(5)::after {
+            transition-delay: 2.3s;
+        }
+
+        &::after {
+            opacity: 1;
+            transform: rotate(-45deg) rotateY(45deg) translateX(0px);
+        }
+
+        &.content {
+            opacity: 0;
+            transition: opacity 4s, transform 2s ;
+            z-index:-1;
+            //transition-delay: 5s;
+        }
+
+        &.box-shadow {
+        }
+
+        &.padding {
+            transition-delay: 0.1s;
+        }
+
+        &.border {
+            transition-delay: 0.2s;
+        }
+
+        &.background {
+            transition: transform 2s var(--easeInOutCirc) 0.2s;
+        }
     }
 
     p:first-of-type {
@@ -308,5 +377,27 @@
         #desktop-prompt {
             display: none;
         }
+    }
+
+    .logo-img {
+        height: 40px !important;
+        margin-top: 10px;
+        display: block;
+        margin-left: -25px !important;
+    }
+    .is-node-logo {
+    }
+
+    .card:hover {
+        background: #eee !important;
+    }
+
+    .stack-title {
+        position: absolute;
+        top: 40px;
+        font-family: 'Press Start 2P', cursive;
+        text-align: center;
+        margin-left: -10px !important;
+        max-width: 30vh;
     }
 </style>

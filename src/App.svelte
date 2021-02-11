@@ -4,22 +4,9 @@
 </script>
 
 <main>
-	<!--nav class="navbar" role="navigation" aria-label="main navigation">
-		<div class="navbar-brand">
-			<a class="navbar-item" href="https://bulma.io">
-				<img
-					src="https://bulma.io/images/bulma-logo.png"
-					width="112"
-					height="28"
-					alt=""
-				/>
-				Brittny.Tech
-			</a>
-		</div>
-	</nav-->
 
-
-	<section class="hero is-fullheight is-hidden-mobile">
+	<!--Title Background-->
+	<section class="hero is-fullheight is-hidden-mobile mask">
 		<div class="hero-body">
 			<div class="container is-max-desktop">
 	
@@ -39,27 +26,17 @@
 			</div>
 		</div>
 	</section>
-
-
-	<section class="hero is-fullheight is-hidden-desktop">
+	<section class="hero is-fullheight is-hidden-desktop mask">
 		<div class="hero-body">
-			<div class="container is-max-desktop">
-	
-				<div class="columns">
-					<div class="column">
-					</div>
-				</div>
-
-			</div>
 		</div>
 	</section>
-	
 
+	<!--Title Text-->
 	<div class="is-absolute">
 		<div class="columns">
-			<div class="column is-three-quarters">
-				<h1 class="title is-1">Hi, my name's Brittny</h1>
-				<p class="subtitle">I'm a full-stack web developer.</p>
+			<div class="column">
+				<h1 class="title is-1">Hi! My name is Brittny</h1>
+				<p class="subtitle is-4">I'm a full-stack web developer.</p>
 			</div>
 		</div>
 	</div>
@@ -79,6 +56,7 @@
 			</div>
 		</div>
 	</section>
+
 	
 	<section class="section is-medium">
 		<div class="container is-max-desktop">
@@ -154,7 +132,7 @@
 			</div>
 			<div class="content">
 				<br>
-				<p><i><b>Other:</b> Docker, Java, C, C++, Prolog, SQL (MySQL, DB2), MongoDB, Redis, Cloud Platforms (IBM Cloud, Heroku), Locust (Load Testing), Testing Frameworks (Mocha, Karma, JUnit), Git, Bash</i></p>
+				<p><i><b>Other:</b> Docker, Java, C, C++, Prolog, SQL (MySQL, SQLite, DB2), MongoDB, Redis, Cloud Platforms (IBM Cloud, Heroku), Locust (Load Testing), Testing Frameworks (Mocha, Karma, JUnit), Git, Bash</i></p>
 			</div>
 		</div>
 	</section>
@@ -186,12 +164,52 @@
 			</div>
 			<div class="content">
 				<br>
-				<p><i><b>Other:</b> Illustration, Writing. I frequently use Visual Studio, Github, Figma (or Sketch), Adobe Illustrator, and Trello.</i></p>
+				<p><i><b>Other:</b> Illustration, Writing.</p>
 			</div>
 		</div>
 	</section>
-	
+
+
 	<section class="section is-medium">
+		<div class="container is-max-desktop">
+			<h3 class="title is-2">Top Tools</h3>
+			<p class="subtitle">
+				A simple container to divide your page into <strong>sections</strong
+				>, like the one you're currently reading.
+			</p>
+			<nav class="level">
+				<div class="level-item has-text-centered">
+					<div>
+						Visual Studio
+					</div>
+				</div>
+				<div class="level-item has-text-centered">
+					<div>
+						Github
+					</div>
+				</div>
+				<div class="level-item has-text-centered">
+					<div>
+						Figma
+					</div>
+				</div>
+				<div class="level-item has-text-centered">
+					<div>
+						Adobe Illustrator
+					</div>
+				</div>
+
+				<div class="level-item has-text-centered">
+					<div>
+						Trello
+					</div>
+				</div>
+			</nav>
+		</div>
+	</section>
+
+	
+	<section class="section is-medium" id="experience">
 		<div class="container is-max-desktop">
 			<h3 class="title is-2">Medium section</h3>
 			<p class="subtitle">
@@ -247,7 +265,7 @@
 	</section>
 
 	
-	<section class="section is-medium">
+	<section class="section is-medium" id="contact">
 		<div class="container is-max-desktop">
 			<h3 class="title is-2">Medium section</h3>
 			<p class="subtitle">
@@ -335,6 +353,8 @@
 		background-size: cover;*/
 		background: linear-gradient(
 			324.7deg, #05d1b2 50%, white 0%);
+	}
+	.mask {
 		-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, 
     	from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
 	}
@@ -351,7 +371,39 @@
 	.is-absolute {
 		position: absolute;
 		top: 30vh;
-		left: 20vw;
+		left: 10vw;
+		opacity: 0.0;
+		animation: fadeIn ease 3s forwards;
+		-webkit-animation: fadeIn ease 3s forwards;
+	}
+
+	.is-absolute h1 {
+		font-size: 3.5rem !important;
+	}
+
+	@keyframes fadeIn {
+		0% {opacity:0;}
+		100% {opacity:1;}
+	}
+
+	@-moz-keyframes fadeIn {
+		0% {opacity:0;}
+		100% {opacity:1;}
+	}
+
+	@-webkit-keyframes fadeIn {
+		0% {opacity:0;}
+		100% {opacity:1;}
+	}
+
+	@-o-keyframes fadeIn {
+		0% {opacity:0;}
+		100% {opacity:1;}
+	}
+
+	@-ms-keyframes fadeIn {
+		0% {opacity:0;}
+		100% {opacity:1;}
 	}
 
 	
