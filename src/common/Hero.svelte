@@ -1,5 +1,5 @@
 <script>
-	import TechStack from '../components/TechStack.svelte'
+	import TechStack from '../components/TechStack.svelte';
 </script>
 
 <!--Title Background-->
@@ -14,7 +14,7 @@
                     <TechStack/>
                 </div>
             </div>
-
+			<!--TODO: diagram-->
             <div class="modal">
                 <div class="modal-background"></div>
                 <div class="modal-content"></div>
@@ -32,15 +32,93 @@
 <div class="is-absolute">
     <div class="columns">
         <div class="column">
-            <h1 class="title is-1">Hi! My name is Brittny</h1>
-            <p class="subtitle is-4">I'm a full-stack web developer.</p>
+			<div class="personal-image square">
+				<img 
+				src="/images/PersonalSite2.jpg" 
+				width="350" 
+				alt="Brittny Lapierre"/>
+			</div>
+            <h1 class="title is-1">Hi, my name is<br><strong class="is-link">Brittny Lapierre</strong></h1>
+            <p class="subtitle is-4 linkedin">
+				<span>I'm a full-stack web developer </span>
+				<a target="_blank"
+				href="https://www.linkedin.com/in/britt-l">
+					<img 
+					alt="Click to go to my linked in"
+					src="/images/logos/linkedin-sm.svg" 
+					width="30">
+				</a>
+			</p>
         </div>
     </div>
 </div>
 
 
-<style>
-.hero {
+<style lang="postcss">
+	a {
+		display: contents;
+	}
+	.subtitle.linkedin {
+		display: flex;
+		align-items: center;
+		& img {
+			margin-left: 10px;
+		}
+	}
+	strong.is-link {
+		color: #3275dc;
+	}
+
+	div.personal-image {
+		margin-top:-25px;
+		margin-bottom: 100px;
+
+		&::before {
+			content: '';
+			background: #05d1b2;
+			opacity: 0.3;
+		}
+
+		&.triangle::before {
+			-webkit-clip-path: polygon(50% 0, 0 100%, 100% 100%);
+			clip-path: polygon(50% 0, 0 100%, 100% 100%);
+			width: 403px;
+			height: 330px;
+			position: absolute;
+			z-index: -1;
+			top: -63px;
+			left: -46px;
+			background: linear-gradient(#05d1b2 25%, #3275dc 75%);
+		}
+		&.circle::before {
+			clip-path: circle(40%);
+			width: 480px;
+			height: 490px;
+			position: absolute;
+			z-index: -1;
+			top: -130px;
+			left: -110px;
+			background: linear-gradient( 
+				145deg
+				, #05d1b2 25%, transparent 75%);
+		}
+
+		&.square::before {
+			background-image: linear-gradient(to bottom right,#05d1b2, #3275dc);
+			position: absolute;
+			top: 40px;
+			left: -71px;
+			width: 360px;
+			z-index: -1;
+			border-radius: 20px;
+			height: 360px;
+		}
+
+		& img {
+			border-radius: 20px;
+		}
+	}
+	.hero {
 		/*background: url('/images/bg.jpg');
 		background-size: cover;*/
 		background: linear-gradient(
@@ -52,7 +130,7 @@
 	}
 	.is-absolute {
 		position: absolute;
-		top: 30vh;
+		top: 13vh;
 		left: 10vw;
 		opacity: 0.0;
 		animation: fadeIn ease 3s forwards;

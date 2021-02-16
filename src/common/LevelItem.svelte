@@ -7,10 +7,10 @@
 
 <div class="level-item has-text-centered" data-tooltip="{tooltip.length ? tooltip : false}">
     {#if heading.length}
-        <p class="heading">Years Experience</p>
+        <p class="heading">{heading}</p>
     {/if}
     {#if content.length}
-        <p class="title" contenteditable bind:innerHTML={content}></p>
+        <p class="title">{@html content}</p>
     {/if}
 </div>
 

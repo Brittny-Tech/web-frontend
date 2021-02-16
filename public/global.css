@@ -153,3 +153,7 @@ button:focus {
   visibility: hidden;
   opacity: 0;
 }
+
+.tool-logo {
+	height: 70px !important;
+}

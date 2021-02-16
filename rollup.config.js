@@ -6,13 +6,10 @@ import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
 import replace from '@rollup/plugin-replace';
 import includeEnv from 'svelte-environment-variables';
-//import postcss from 'rollup-plugin-postcss'; // Fancy animations!
 
 const { preprocess } = require('./svelte.config');
 
-
 const production = !process.env.ROLLUP_WATCH;
-
 
 function serve() {
 	let server;

@@ -24,64 +24,39 @@
         </p>
     </div>
 
-    <div class="box-shadow card">
+    <a target="_blank"
+    href="https://github.com/Brittny-Tech/web-frontend"
+    class="box-shadow card">
         <h3 class="stack-title title is-6">This website is powered by...</h3>
         <img class="logo-img"
         src="/images/logos/svelte.svg" 
         alt="Svelte Logo">
-        <a>view on github</a>
-
-        <div class="modal">
-            <div class="modal-background"></div>
-            <div class="modal-content">
-              <!-- Any other Bulma elements you want -->
-            </div>
-            <button class="modal-close is-large" aria-label="close"></button>
-          </div>
-    </div>
-    <div class="padding card">
-
+        <span class="subtitle">Click to view on github</span>
+    </a>
+    <a target="_blank"
+    href="https://github.com/Brittny-Tech/web-api-gateway"
+    class="padding card">
         <img class="logo-img is-node-logo"
         src="/images/logos/node.png" 
         alt="Node.js Logo">
-        <a>view on github</a>
-
-        <div class="modal">
-            <div class="modal-background"></div>
-            <div class="modal-content">
-              <!-- Any other Bulma elements you want -->
-            </div>
-            <button class="modal-close is-large" aria-label="close"></button>
-          </div>
-    </div>
-    <div class="border card">
+        <span class="subtitle nodejs">Click to view on github</span>
+    </a>
+    <a target="_blank"
+    href="https://github.com/Brittny-Tech/articles-microservice"
+    class="border card">
         <img class="logo-img"
         src="/images/logos/rails.svg" 
         alt="Rails Logo">
-        <a>view on github</a>
-        <div class="modal">
-            <div class="modal-background"></div>
-            <div class="modal-content">
-              <!-- Any other Bulma elements you want -->
-              <a href="#experience"></a>
-            </div>
-            <button class="modal-close is-large" aria-label="close"></button>
-        </div>
-    </div>
-    <div class="background card">
+        <span class="subtitle">Click to view on github</span>
+    </a>
+    <a target="_blank"
+    href="https://github.com/Brittny-Tech/email-microservice"
+    class="background card">
         <img class="logo-img"
         src="/images/logos/perl.svg" 
         alt="Perl Logo">
-        <a>view on github</a>
-        <div class="modal">
-            <div class="modal-background"></div>
-            <div class="modal-content">
-              <!-- Any other Bulma elements you want -->
-              <a href="#contact"></a>
-            </div>
-            <button class="modal-close is-large" aria-label="close"></button>
-        </div>
-    </div>
+        <span class="subtitle">Click to view on github</span>
+    </a>
 </div>
 
 <style lang="postcss">
@@ -95,22 +70,11 @@
         grid: [stack] / [stack];
         perspective: 5000;
 
-        &:before {
-            /*content: "";
-            position: fixed;
-            inset: 0;
-            background: lch(95 0 0);
-            transition: background 2s ease;
-            pointer-events: none;*/
-        }
-
         &:matches(:hover, :active) {
             &:before {
                 background: lch(15 0 0);
             }
         }
-
-
     }
 
 
@@ -212,25 +176,6 @@
                 content: "";
                 position: absolute;
                 inset: 0;
-                /*clip-path: polygon(
-                    0% 0%,
-                    0% 100%,
-                    5vmin 100%,
-                    5vmin 5vmin,
-                    calc(100% - 5vmin) 5vmin,
-                    calc(100% - 5vmin) calc(100% - 5vmin),
-                    5vmin calc(100% - 5vmin),
-                    5vmin 100%,
-                    100% 100%,
-                    100% 0%
-                );
-                background: repeating-linear-gradient(
-                    -45deg,
-                    cyan,
-                    cyan 1px,
-                    lch(100 0 0 / 5%) 1px,
-                    lch(100 0 0 / 5%) 10px
-                );*/
             }
         }
 
@@ -347,9 +292,6 @@
             //transition-delay: 5s;
         }
 
-        &.box-shadow {
-        }
-
         &.padding {
             transition-delay: 0.1s;
         }
@@ -360,6 +302,16 @@
 
         &.background {
             transition: transform 2s var(--easeInOutCirc) 0.2s;
+        }
+
+        & .subtitle {
+            visibility: hidden;
+            font-size: 15px;
+            margin-top: 10px !important;
+            margin-bottom: 0 !important;
+        }
+        & .subtitle.nodejs {
+            margin-left: -25px !important;
         }
     }
 
@@ -390,6 +342,9 @@
 
     .card:hover {
         background: #eee !important;
+        & .subtitle {
+            visibility: visible;
+        }
     }
 
     .stack-title {

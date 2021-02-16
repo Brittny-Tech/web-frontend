@@ -27,6 +27,7 @@
   "dependencies": {
     "env-cmd": "^10.1.0",
     "sirv-cli": "^1.0.0",
+    "svelte-c-reveal": "^2.0.1",
     "svelte-environment-variables": "^1.0.3"
   }
 }

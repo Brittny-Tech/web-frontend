@@ -4,17 +4,17 @@
         {
             heading: "Years Experience",
             content: "5",
-            tooltip: "explain 1"
+            tooltip: "I've been working as a full stack web developer since the summer of 2015!"
         },
         {
             heading: "University Degree",
             content: "1",
-            tooltip: "explain 2"
+            tooltip: "I took my undergrad at Carleton University, earning a degree in Computer Science."
         },
         {
             heading: "Professional Certificate",
             content: "1",
-            tooltip: "explain 3"
+            tooltip: "I've since began to take a UX Design certificate at the University of Toronto, and I'm loving every class!"
         },
     ];
 </script>

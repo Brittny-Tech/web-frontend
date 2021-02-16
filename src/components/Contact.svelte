@@ -5,10 +5,11 @@
     import FormControl from '../common/FormControl.svelte';
     import credentials from '../services/auth.js';
 
+    export let showSuccess = false;
 
-    let from = ""
-    let subject = ""
-    let html = ""
+    let from = "";
+    let subject = "";
+    let html = "";
     
 
     function handleSubmit () {
@@ -19,9 +20,7 @@
 
         let data = JSON.stringify({
                     from, subject, html
-                })
-
-        console.log(formData, from, subject, html, data)
+                });
 
         fetch(process.env.SVELTE_APP_CONTACT_URL, 
             {
@@ -32,24 +31,23 @@
                     "Content-Type": "application/x-www-form-urlencoded",
                     "Authorization": credentials
                 }
-            }).then((response) => { 
-                console.log(response);
-                const json = response.json()
-                let result = JSON.stringify(json)
+            }).then( async (response) => { 
+                const json = await response.json();
+                if(json['success']) showSuccess = true;
             });
     }
 
 </script>
 
+
 <form on:submit|preventDefault={handleSubmit}>
-    {from} {subject} {html}
     <EmailInput  
     placeholder="your_email@hello.com" 
     icon="fa-envelope"
     bind:value={from}/>
     <TextInput 
     placeholder="Subject" 
-    icon=""
+    icon="fa-pen-alt"
     bind:value={subject}/>
     <TextArea 
     placeholder="Message..." 
@@ -58,6 +56,7 @@
     
     <FormControl>
         <button 
+        disabled="{!from.length || !subject.length || !html.length}"
         class="button is-link"
         type=submit>Submit</button>
     </FormControl>
