@@ -1,0 +1,80 @@
+<script>
+    export let loading = false
+</script>
+
+{#if loading}
+    <div class="typing-loader"></div>
+{/if}
+
+<style lang="postcss">
+    .typing-loader{
+        margin: 60px auto;
+        width: 6px;
+        height: 6px;
+        -webkit-animation: line 1s linear infinite alternate;
+        -moz-animation: line 1s linear infinite alternate;
+        animation: line 1s linear infinite alternate;
+    }
+    @-webkit-keyframes line{
+        0%{
+        
+            background-color: rgba(0,0,0, 1);
+            box-shadow: 12px 0px 0px 0px rgba(0,0,0,0.2), 
+                        24px 0px 0px 0px rgba(0,0,0,0.2);
+                        
+        }
+        25%{ 
+                background-color: rgba(0,0,0, 0.4);
+                box-shadow: 12px 0px 0px 0px rgba(0,0,0,2), 
+                        24px 0px 0px 0px rgba(0,0,0,0.2);
+                        
+        }
+        75%{ background-color: rgba(0,0,0, 0.4);
+            box-shadow: 12px 0px 0px 0px rgba(0,0,0,0.2), 
+                        24px 0px 0px 0px rgba(0,0,0,2);
+                    
+        }
+    }
+
+    @-moz-keyframes line{
+        0%{
+        
+            background-color: rgba(0,0,0, 1);
+            box-shadow: 12px 0px 0px 0px rgba(0,0,0,0.2), 
+                        24px 0px 0px 0px rgba(0,0,0,0.2);
+                        
+        }
+        25%{ 
+                background-color: rgba(0,0,0, 0.4);
+                box-shadow: 12px 0px 0px 0px rgba(0,0,0,2), 
+                        24px 0px 0px 0px rgba(0,0,0,0.2);
+                        
+        }
+        75%{ background-color: rgba(0,0,0, 0.4);
+            box-shadow: 12px 0px 0px 0px rgba(0,0,0,0.2), 
+                        24px 0px 0px 0px rgba(0,0,0,2);
+                    
+        }
+    }
+
+    @keyframes line{
+        0%{
+        
+            background-color: rgba(0,0,0, 1);
+            box-shadow: 12px 0px 0px 0px rgba(0,0,0,0.2), 
+                        24px 0px 0px 0px rgba(0,0,0,0.2);
+                        
+        }
+        25%{ 
+                background-color: rgba(0,0,0, 0.4);
+                box-shadow: 12px 0px 0px 0px rgba(0,0,0,2), 
+                        24px 0px 0px 0px rgba(0,0,0,0.2);
+                        
+        }
+        75%{ background-color: rgba(0,0,0, 0.4);
+            box-shadow: 12px 0px 0px 0px rgba(0,0,0,0.2), 
+                        24px 0px 0px 0px rgba(0,0,0,2);
+                    
+        }
+    }
+</style>
